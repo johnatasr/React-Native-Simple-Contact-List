@@ -1,28 +1,28 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
+
 import CapitalizeLetter from '../utils/index'
 
 export default class PeopleListItem extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.props = {
-            pessoa: []
+            pessoa: [],
         }
     }
        
     render () {
-        const { title, first, last } = this.props.pessoa.name; 
+        const { first, last } = this.props.pessoa.name; 
         const { thumbnail } = this.props.pessoa.picture;
+        const { detailFunction } = this.props;
 
         return (    
-            <TouchableOpacity onPress={ () => console.log('Clicado') }>     
+            <TouchableOpacity onPress={() => detailFunction()}>     
                 <View key={ first } style={styles.line}>
                     <Image style={styles.avatar} source={{ uri: thumbnail}} />
                     <Text style={styles.lineText} >{
                         `${
-                            CapitalizeLetter(title)
-                        } ${
                             CapitalizeLetter(first)
                         } ${
                             CapitalizeLetter(last)
@@ -47,7 +47,7 @@ const styles = StyleSheet.create({
     lineText : {
         fontSize: 20,
         paddingLeft: 15,
-        color: '#D81E5B',
+        color: '#272343',
         flex: 7
     },
 

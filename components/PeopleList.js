@@ -3,10 +3,9 @@ import { View, StyleSheet } from 'react-native';
 
 import PeopleListItem from './PeopleListItem';
 
-
 export default class PeopleList extends React.Component {
-    constructor(){
-        super();
+    constructor(props){
+        super(props);
         this.props = {
             peoples: []
         }
@@ -14,7 +13,7 @@ export default class PeopleList extends React.Component {
    
     renderList () {
         const listaNomes = this.props.peoples.map((pessoa) => {
-            return <PeopleListItem  pessoa={pessoa} />
+            return <PeopleListItem  pessoa={pessoa} detailFunction={this.props.onPress}/>
         })
     
         return listaNomes
@@ -31,7 +30,7 @@ export default class PeopleList extends React.Component {
 
 const styles = StyleSheet.create({
     container: {
-        backgroundColor: '#59C9A5'
+        backgroundColor: '#e3f6f5'
     },
     
 })
