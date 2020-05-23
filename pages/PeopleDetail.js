@@ -13,9 +13,7 @@ export default class PeopleDetail extends React.Component {
   
     render () {
         return (
-            <View style={styles.container}>
-                <Header title="Contatos"/>
-            </View>
+            <View style={styles.container}></View>
         );
     }
 }

@@ -26,7 +26,6 @@ export default class PeoplePage extends React.Component {
     render () {
         return (
             <View style={styles.container}>
-                <Header title="Contatos"/>
                 <PeopleList peoples={this.state.pessoas} onPress={(page) => {
                     this.props.navigation.navigate('PeopleDetail')
                 }}/>
