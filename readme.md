@@ -3,19 +3,12 @@
 </h4>
 <p align="center">
   
-  <a href="https://github.com/Rocketseat/semana-omnistack-10/commits/master">
-    <img alt="GitHub last commit" src="https://img.shields.io/github/last-commit/Rocketseat/semana-omnistack-10">
-  </a>
+  
+  <img alt="GitHub last commit" src="https://github.com/johnatasr/React-Native-Simple-Contact-List/blob/master/images/1.PNG">
+  <img alt="Repository issues" src="https://github.com/johnatasr/React-Native-Simple-Contact-List/blob/master/images/2.PNG">
+  <img alt="Repository issues" src="https://github.com/johnatasr/React-Native-Simple-Contact-List/blob/master/images/3.PNG">
+  
 
-  <a href="https://github.com/Rocketseat/semana-omnistack-10/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/Rocketseat/semana-omnistack-10">
-  </a>
-
-  <a href="https://github.com/Rocketseat/semana-omnistack-10/issues">
-    <img alt="Repository issues" src="https://img.shields.io/github/issues/Rocketseat/semana-omnistack-10">
-  </a>
-
-  <img alt="License" src="https://img.shields.io/badge/license-MIT-brightgreen">
 </p>
 
 Projeto desenvolvido com React Native junto a API `https://randomuser.me/` de contatos de pessoas aleatórias.
