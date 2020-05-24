@@ -4,7 +4,6 @@ import { createStackNavigator, HeaderBackground } from '@react-navigation/stack'
 
 import PeoplePage from './pages/PeoplePage';
 import PeopleDetail from './pages/PeopleDetail';
-import { color } from 'react-native-reanimated';
 
 const AppStack = createStackNavigator();
 
@@ -21,7 +20,8 @@ function NavStack() {
                 headerTitleStyle :{
                     fontWeight: 'bold',
                 }
-                }} >
+                }} 
+            >
             <AppStack.Screen 
                 name="PeoplePage"   
                 component={PeoplePage} 
@@ -32,9 +32,7 @@ function NavStack() {
             <AppStack.Screen 
                 name="PeopleDetail" 
                 component={PeopleDetail}
-                options={{
-                    title: "Detalhes", 
-                }}    
+                options={({ route }) => ({ title: route.params.title })}
             />
         </AppStack.Navigator>
     )
@@ -48,3 +46,4 @@ export default function App() {
         </NavigationContainer>
     );
 }
+

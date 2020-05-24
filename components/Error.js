@@ -1,12 +1,10 @@
 import React from 'react';
-import { View, Text, StyleSheet, TouchableOpacity } from 'react-native';
+import { View, Text, StyleSheet } from 'react-native';
 import Icon from 'react-native-vector-icons/AntDesign'
 
-const Header = (props) => (
+const Error = (props) => (
     <View style={style.container}>
-        <TouchableOpacity>
-            <Icon name="left" size={30} color="#FFFF" style={style.backIcon}/>
-        </TouchableOpacity> 
+        <Icon name="exclamationcircle" size={50} color="#eb4034" style={style.error}/>
         <Text style={style.title} >{props.title}</Text>
     </View>
 )
@@ -14,19 +12,19 @@ const Header = (props) => (
 const style = StyleSheet.create({
 
     container: {
-        marginTop: 10,
-        backgroundColor: '#bae8e8',
+        marginTop: 25,
+        backgroundColor: '#fff',
         alignItems: 'center',
         justifyContent: 'center',
+        flex: 1
     },
 
     title: {
         fontSize: 30,
         color: '#272343',
-        marginLeft: 10
+        marginTop: 15
     },
-
     
 })
 
-export default Header;
+export default Error;

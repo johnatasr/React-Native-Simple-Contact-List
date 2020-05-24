@@ -1,32 +1,29 @@
 import React from 'react';
 import { View, Text, StyleSheet, Image, TouchableOpacity } from 'react-native';
 
-
 import CapitalizeLetter from '../utils/index'
 
 export default class PeopleListItem extends React.Component {
     constructor(props){
         super(props);
-        this.props = {
-            pessoa: [],
-        }
     }
        
     render () {
         const { first, last } = this.props.pessoa.name; 
         const { thumbnail } = this.props.pessoa.picture;
-        const { detailFunction } = this.props;
 
         return (    
-            <TouchableOpacity onPress={() => detailFunction()}>     
-                <View key={ first } style={styles.line}>
-                    <Image style={styles.avatar} source={{ uri: thumbnail}} />
+            <TouchableOpacity onPress={() => this.props.detailFunction.navigate('PeopleDetail', 
+                            { title: first + ' ' + last, people: this.props.pessoa })}>     
+                <View style={styles.line}>
+                    <Image style={styles.avatar} source={{ uri: thumbnail }} />
                     <Text style={styles.lineText} >{
                         `${
                             CapitalizeLetter(first)
                         } ${
                             CapitalizeLetter(last)
-                        }`}</Text> 
+                        }`}
+                    </Text> 
                 </View>
             </TouchableOpacity>
        )
@@ -39,9 +36,14 @@ const styles = StyleSheet.create({
         height: 60,
         borderBottomWidth: 1,
         borderBottomColor: "#bbb",
+        borderRadius: 5 ,
+        backgroundColor: '#e3f6f5',
+
+        margin: 2.5,
 
         alignItems: 'center',
-        flexDirection: 'row'
+        flexDirection: 'row',
+
     },
 
     lineText : {
@@ -57,6 +59,7 @@ const styles = StyleSheet.create({
         flex: 1,
         marginLeft: 15,
     }
-
 })
 
+// export default withNavigation(PeopleListItem)
+// JSON.stringify(
